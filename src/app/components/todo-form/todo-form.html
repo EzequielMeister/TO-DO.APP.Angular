@@ -1,4 +1,8 @@
-<h2>Agregar nueva tarea</h2>
+<div class="center-container">
+  <h2 [@fadeIn]>Agregar nueva tarea</h2>
 
-<input [(ngModel)]="newTodo" placeholder="Escribí una tarea..." />
-<button (click)="addTodo()">Agregar</button>
+  <form (ngSubmit)="addTodo()" [@fadeIn]>
+    <input [(ngModel)]="newTodo" name="todo" placeholder="Escribí una tarea..." />
+    <button type="submit" class="add">Agregar</button>
+  </form>
+</div>

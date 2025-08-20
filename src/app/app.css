@@ -1,14 +1,26 @@
-h1 {
-  color: #2bb8ac;
-  font-family: Arial, sans-serif;
+body {
+  background: #121212; /* fondo oscuro */
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #b32626;
+}
+
+h1, h2 {
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
 }
 
 nav a {
-  margin-right: 10px;
+  margin-right: 12px;
   text-decoration: none;
-  color: #333;
+  color: #ffffff; /* azul suave */
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #42a5f5;
 }

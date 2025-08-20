@@ -1,11 +1,11 @@
-<h2>Lista de tareas</h2>
-
-<ul>
-  <li *ngFor="let todo of todos$ | async">
-    <input type="checkbox" [checked]="todo.completed" (change)="toggle(todo)" />
-    <span [style.text-decoration]="todo.completed ? 'line-through' : 'none'">
-      {{ todo.title }}
-    </span>
-    <button (click)="delete(todo)">❌</button>
-  </li>
-</ul>
+<div class="tareas-container">
+  <ul>
+    <li *ngFor="let todo of todos$ | async" 
+        [class.completed]="todo.completed"
+        [@taskAnimation]>
+      <input type="checkbox" [checked]="todo.completed" (change)="toggle(todo)" />
+      <span>{{ todo.title }}</span>
+      <button (click)="delete(todo)">❌</button>
+    </li>
+  </ul>
+</div>

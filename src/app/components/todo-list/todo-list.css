@@ -1,36 +1,74 @@
-h2 {
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
+/* todo-list.component.css */
+
+.tareas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tareas-container ul {
+  width: 100%;
+  max-width: 500px;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f0f0f0;
-  padding: 10px 15px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 li:hover {
-  background: #e0e7ff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  background: linear-gradient(145deg, #2c2c2c, #3a3a3a);
 }
 
 li.completed span {
   text-decoration: line-through;
-  color: #888;
+  color: #757575;
+}
+
+span {
+  flex: 1;
+  margin-left: 12px;
+  font-size: 15px;
+  color: var(--color-text);
 }
 
 button {
-  background: none;
   border: none;
+  border-radius: 14px;
+  padding: 8px 14px;
+  font-size: 14px;
   cursor: pointer;
-  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  opacity: 0.95;
+}
+
+button.delete {
+  background: linear-gradient(135deg, var(--color-delete), var(--color-delete-dark));
+  color: white;
+}
+
+button.delete:hover {
+  background: linear-gradient(135deg, var(--color-delete-dark), #d50000);
 }

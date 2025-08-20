@@ -16,22 +16,22 @@ export class TodoService {
     return this.todos$.asObservable();
   }
 
-  addTodo(title: string) {
-    const newTodo: Todo = { id: Date.now(), title, completed: false };
-    this.todos.push(newTodo);
-    this.todos$.next(this.todos);
-  }
+ addTodo(title: string) {
+  const newTodo: Todo = { id: Date.now(), title, completed: false };
+  this.todos.push(newTodo);
+  this.todos$.next([...this.todos]); // copia del array
+}
 
-  toggleTodo(id: number) {
-    const todo = this.todos.find(t => t.id === id);
-    if (todo) {
-      todo.completed = !todo.completed;
-      this.todos$.next(this.todos);
-    }
+toggleTodo(id: number) {
+  const todo = this.todos.find(t => t.id === id);
+  if (todo) {
+    todo.completed = !todo.completed;
+    this.todos$.next([...this.todos]); // copia del array
   }
+}
 
-  deleteTodo(id: number) {
-    this.todos = this.todos.filter(t => t.id !== id);
-    this.todos$.next(this.todos);
-  }
+deleteTodo(id: number) {
+  this.todos = this.todos.filter(t => t.id !== id);
+  this.todos$.next([...this.todos]); // copia del array
+}
 }
