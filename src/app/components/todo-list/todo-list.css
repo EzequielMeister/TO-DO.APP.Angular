@@ -1,0 +1,36 @@
+h2 {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f0f0f0;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  background: #e0e7ff;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
